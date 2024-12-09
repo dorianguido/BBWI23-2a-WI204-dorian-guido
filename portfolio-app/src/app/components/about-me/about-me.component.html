@@ -7,9 +7,16 @@
     }
 img {
             display: block;
-            margin: 0 auto;
+            margin: 20 auto;
         }
 </style>    
 <h1>About me</h1>
 <p>{{ aboutMe?.name }}</p>
+<img [src]="aboutMe?.imagePath">
+
+<h1>About Me</h1>
+<form #aboutMeForm="ngForm" (ngSubmit)="submit(aboutMeForm)">
+ <input type="text" name="name" [ngModel]="aboutMe?.name" required>
+ <button class="btn" type="submit" [disabled]="aboutMeForm.invalid">save</button>
+</form>
 <img [src]="aboutMe?.imagePath">

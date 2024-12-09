@@ -1,3 +1,17 @@
+<p>cv works!</p>
+@if (formGroup) {
+<form [formGroup]=formGroup (ngSubmit)="saveCV()">
+ <input type="number" formControlName="id" hidden>
+ <input type="text" formControlName="employer">
+ <input type="date" formControlName="start">
+ <input type="date" formControlName="end">
+ <button class="btn" type="submit">save</button>
+ <button class="btn grey" type="button" (click)="formGroup = undefined">cancel</button>
+</form>
+}
+<button class="btn" type="button" (click)="select()">new</button>
+<ul>
+
 <h1>CV</h1>
 <ul>
  @for (cv of cvs; track cv.employer) {
