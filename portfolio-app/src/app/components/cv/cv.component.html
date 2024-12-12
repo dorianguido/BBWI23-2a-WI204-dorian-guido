@@ -1,20 +1,22 @@
 <p>cv works!</p>
 @if (formGroup) {
-<form [formGroup]=formGroup (ngSubmit)="saveCV()">
- <input type="number" formControlName="id" hidden>
- <input type="text" formControlName="employer">
- <input type="date" formControlName="start">
- <input type="date" formControlName="end">
- <button class="btn" type="submit">save</button>
- <button class="btn grey" type="button" (click)="formGroup = undefined">cancel</button>
-</form>
-}
-<button class="btn" type="button" (click)="select()">new</button>
-<ul>
+    <form [formGroup]=formGroup (ngSubmit)="saveCV()">
+     <input type="number" formControlName="id" hidden>
+     <input type="text" formControlName="employer">
+     <input type="date" formControlName="start">
+     <input type="date" formControlName="end">
+     <button class="btn" type="submit">save</button>
+     <button class="btn grey" type="button" (click)="formGroup = undefined">cancel</button>
+    </form>
+    }
+    <a class="btn" [routerLink]="['new']">NEW</a>
+    <ul>
+     @for (cv of cvs; track cv.employer) {
+     <li>{{ cv.employer }} {{ cv.start }} - {{ cv.end }}
+     <button class="btn" (click)="select(cv)">edit</button>
 
-<h1>CV</h1>
-<ul>
- @for (cv of cvs; track cv.employer) {
- <li>{{ cv.employer }} {{ cv.start }} - {{ cv.end }}</li>
- }
-</ul>
+     <a class="btn red" [routerLink]="[cv.id, 'delete']" >DELETE</a>
+
+     </li>
+     }
+    </ul>

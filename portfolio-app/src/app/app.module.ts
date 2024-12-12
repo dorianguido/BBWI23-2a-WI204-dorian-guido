@@ -9,13 +9,19 @@ import { CVComponent } from './components/cv/cv.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateUpdateComponent } from './components/cv/create-update/create-update.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { DeleteComponent } from './components/cv/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutMeComponent,
     CVComponent,
-    CreateUpdateComponent
+    CreateUpdateComponent,
+    ParentComponent,
+    ChildComponent,
+    DeleteComponent
   ],
   imports: [
     FormsModule,

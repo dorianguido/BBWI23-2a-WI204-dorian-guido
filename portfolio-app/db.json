@@ -6,5 +6,12 @@
       "image": "/assets/astronaut.jpg"
     }
   ],
-  "cvs": []
+  "cvs": [
+    {
+      "id": "d881",
+      "employer": "ccccc",
+      "start": "9999-09-09",
+      "end": "9999-09-09"
+    }
+  ]
 }
