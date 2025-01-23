@@ -1,0 +1,14 @@
+<router-outlet />
+
+<button (click)="selectLanguage('en')">EN</button>
+<button (click)="selectLanguage('de')">IT</button>
+<button (click)="selectLanguage('it')">FR</button>
+
+
+<p>
+{{'welcome' | translate}}
+
+</p>
+<p>
+{{ 'not welcome' | translate}}
+</p>
